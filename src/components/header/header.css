@@ -1,0 +1,27 @@
+.header{
+    background-color: var(--color-white);
+    position: fixed;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: var(--header-height);
+    border-bottom: 1.2px solid var(--border-color);
+    z-index: 999;
+}
+.title{
+    display: none;
+}
+.logo-container{
+    height:100%;
+    width: 20%;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-left:1rem ;
+}
+
+.logo-img{
+    width: 30px;
+}

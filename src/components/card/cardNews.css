@@ -1,0 +1,34 @@
+.content-card{
+    width: 95%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+}
+.body-card{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+    padding-top: 0.5rem;
+    width: 100%;
+    height: fit-content;
+}
+
+.date{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-bottom: .5rem;
+    gap: .5rem;
+    color: var(--text-color-date);
+}
+
+.paragraph-card{
+    color: var(--text-gray-color);
+    display: none;
+}
+
+.img-card{
+    width: 100%;
+}

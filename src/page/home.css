@@ -1,0 +1,18 @@
+.wrapper-home{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    height: fit-content; 
+    gap:3rem;
+    margin-top: var(--header-height);
+}
+
+.wrapper-home > .wrapper-message{
+    justify-content: center;
+    padding-left: 1rem;
+}
+
+
+
+
+
