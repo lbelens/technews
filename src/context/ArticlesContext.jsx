@@ -1,4 +1,4 @@
-import { useReducer, useState } from "react";
+import { useReducer } from "react";
 import { createContext } from "react";
 import { addKey } from "../helpers/funString";
 import { custom } from '../helpers/http';
@@ -50,11 +50,8 @@ const reducer = (state, action)=>{
         .then((response) => {
             if(!response.error){
                 // Guardar datos para concatenar el arreglo y poner un id
-                // addKey(response.articles);
-                addKey(response);
-                dispatch({type:'SET_ARTICLES', payload:response});
-               
-                // dispatch({type:'SET_ARTICLES', payload:response.articles})
+                addKey(response.articles);
+                dispatch({type:'SET_ARTICLES', payload:response.articles})
             }else{
                 const param ={
                     response,

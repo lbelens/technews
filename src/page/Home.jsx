@@ -1,36 +1,31 @@
 import React, { useContext, useState } from 'react';
 import { Header } from '../components/header/Header';
-import { Message } from '../components/message/Message';
+import { MessageLoad } from '../components/message/MessageLoad';
 import './home.css';
 import RecentNews from '../components/recentNews/RecentNews';
 import FeaturedNews from '../components/featuredNews/FeaturedNews';
-import ArticlesContext, { ArticlesProvider } from '../context/ArticlesContext';
-import { useEffect } from 'react';
+import ArticlesContext from '../context/ArticlesContext';
 import InputSearch from '../components/search/InputSearch';
 
 export function Home (){
     const {state} = useContext(ArticlesContext);
-    const [filter, setFilter]= useState(null);
+    const [search, setSearch]= useState(null);
 
-    const getValue=(value)=>{
-        setFilter(value);
-        console.log('en home: '+ value)
+    //obtiene valor de la busqueda
+    const getSearchValue=(value)=>{
+        setSearch(value);
     }
-
-    // useEffect(()=>{
-    //     // localStorage.clear();
-    // },[filter])
 
     return(
         <>
-            <Header><InputSearch get={getValue}/></Header>
+            <Header><InputSearch getSearchValue={getSearchValue}/></Header>
             <div className='wrapper-home'>
             { state.errorFeaturedNews!=null && state.errorRecentNews!=null 
-                ? <Message message={'404'} info={'Por el momento las noticias no se encuentran disponibles.'}/>
+                ? <MessageLoad message={'404'} info={'Por el momento las noticias no se encuentran disponibles.'}/>
                 :
                 <>
                     <main className='wrapper-news'>
-                        <RecentNews valueFilter = {filter}/>
+                        <RecentNews valueSearch = {search}/>
                     </main>
                     <FeaturedNews/>
                 </>

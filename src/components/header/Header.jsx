@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import imageLogo from '../../assets/img/logo_isotipo.svg';
-import InputSearch from '../search/InputSearch';
 import './header.css';
 
 export function Header (props){

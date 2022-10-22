@@ -1,7 +1,7 @@
 import React from 'react';
-import './message.css';
+import './messageLoad.css';
 
-export function Message({message=null, info}){
+export function MessageLoad({message=null, info}){
     return(
         <>
             <div className='wrapper-message'>
