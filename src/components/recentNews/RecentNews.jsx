@@ -10,25 +10,28 @@ import './recentNews.css';
 import { formatDate } from '../../helpers/functionString';
 import { SearchResult } from '../searchResult/SearchResult';
 
+const url = "http://192.168.100.11:3005/articles";
 let date= formatDate('yyyy-mm-dd');
 
-function RecentNews({valueSearch}) {
-    const url = `https://newsapi.org/v2/everything?q=google OR microsoft OR github OR facebook&language=es&pageSize=13&from=${date.today}&apiKey=ac36fa2e8bc7425d822f7ed292147515`;
-
+function RecentNews({valueFilter}) {
+    // const url = `https://newsapi.org/v2/everything?q=google OR microsoft OR github OR facebook&language=es&pageSize=13&from=${date.today}&apiKey=ac36fa2e8bc7425d822f7ed292147515`;
+console.log(date)
     const CATEGORY = "recientes";
     const {getArticles} = useContext(ArticlesContext);
     const [recentNews, setRecentNews]= useState([]);
     const [error,setError] = useState(null);
     const [loading, setLoading] = useState(true);
-    const [filter, setFilter]=useState(valueSearch);
- 
+    const [filtrar, setFiltrar]=useState(valueFilter);
+    let datosFiltrados=[];
+    
     const getData = async ()=>{
         let response= await getArticles(url, CATEGORY);   
         if(response.error){
             setError(response)
             setLoading(false);
         }else{
-            setRecentNews(response.articles);
+            setRecentNews(response);
+            // setRecentNews(response.articles);
             setLoading(false);
         }
     }
