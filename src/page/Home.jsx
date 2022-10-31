@@ -4,7 +4,7 @@ import { Message } from '../components/message/Message';
 import './home.css';
 import RecentNews from '../components/recentNews/RecentNews';
 import FeaturedNews from '../components/featuredNews/FeaturedNews';
-import ArticlesContext, { ArticlesProvider } from '../context/ArticlesContext';
+import ArticlesContext from '../context/ArticlesContext';
 import { useEffect } from 'react';
 import InputSearch from '../components/search/InputSearch';
 
@@ -17,9 +17,9 @@ export function Home (){
         console.log('en home: '+ value)
     }
 
-    // useEffect(()=>{
-    //     // localStorage.clear();
-    // },[filter])
+    useEffect(()=>{
+     localStorage.clear();
+    },[])
 
     return(
         <>
