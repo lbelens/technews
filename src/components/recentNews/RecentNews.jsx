@@ -12,7 +12,8 @@ import { SearchResult } from '../searchResult/SearchResult';
 
 let date= formatDate('yyyy-mm-dd');
 
-function RecentNews({valueSearch}) {
+function RecentNews({valueFilter}) {
+
     const url = `https://newsapi.org/v2/everything?q=google OR microsoft OR github OR facebook&language=es&pageSize=13&from=${date.today}&apiKey=ac36fa2e8bc7425d822f7ed292147515`;
 
     const CATEGORY = "recientes";
@@ -20,8 +21,8 @@ function RecentNews({valueSearch}) {
     const [recentNews, setRecentNews]= useState([]);
     const [error,setError] = useState(null);
     const [loading, setLoading] = useState(true);
-    const [filter, setFilter]=useState(valueSearch);
- 
+    const [filter, setFilter]=useState(valueFilter);
+
     const getData = async ()=>{
         let response= await getArticles(url, CATEGORY);   
         if(response.error){
@@ -29,6 +30,7 @@ function RecentNews({valueSearch}) {
             setLoading(false);
         }else{
             setRecentNews(response.articles);
+            response.articles.map(article => localStorage.setItem(article.key, JSON.stringify(article)))
             setLoading(false);
         }
     }
@@ -42,8 +44,8 @@ function RecentNews({valueSearch}) {
     })
     
     useEffect(()=>{
-        setFilter(valueSearch)
-    },[valueSearch])
+        setFilter(valueFilter)
+    },[valueFilter])
 
     useEffect(()=>{
         getData();

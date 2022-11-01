@@ -24,8 +24,8 @@ export default function FeaturedNews() {
             setError(response)
             setLoading(false);
         }else{
-            // setfeaturedNews(response)
             setfeaturedNews(response.articles)
+            response.articles.map(article => localStorage.setItem(article.key, JSON.stringify(article)))
             setLoading(false);
         }
     }

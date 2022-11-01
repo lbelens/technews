@@ -14,13 +14,13 @@ const reducer = (state, action)=>{
 
     if(action.type==="SET_ARTICLES"){
         if(state.dataArticles!=null){
-          let articles = state.dataArticles.concat(action.payload)
-          articles.map(article => localStorage.setItem(article.key, JSON.stringify(article)))
+        let articles = state.dataArticles.concat(action.payload)
+        //   articles.map(article => localStorage.setItem(article.key, JSON.stringify(article)))
           return{...state,dataArticles: articles}
         }
         else{
-            let articles = action.payload;
-            articles.map(article => localStorage.setItem(article.key, JSON.stringify(article)))
+            // let articles = action.payload;
+            // articles.map(article => localStorage.setItem(article.key, JSON.stringify(article)))
             return{...state,dataArticles:action.payload};
         } 
     }
@@ -52,6 +52,10 @@ const reducer = (state, action)=>{
                 // Guardar datos para concatenar el arreglo y poner un id
                 addKey(response.articles);
                 dispatch({type:'SET_ARTICLES', payload:response.articles})
+                // addKey(response);
+                // dispatch({type:'SET_ARTICLES', payload:response});
+               
+                
             }else{
                 const param ={
                     response,
