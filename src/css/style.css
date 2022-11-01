@@ -106,9 +106,6 @@ h3{
     }
 
     /* news */
-    /* .title-section{
-        padding-top: 4rem;
-    } */
     .wrapper-card-recent-news, .wrapper-card-featured-news{
         display: flex;
         flex-direction: row;
@@ -134,6 +131,11 @@ h3{
     .footer p{
         font-size: 14px;
     }
+    /* search */
+    .wrapper-message-notFound{
+        align-items: center;
+    }
+
 }
 
 /* desktop */
@@ -210,5 +212,7 @@ h3{
     .wrapper-card-featured-news .body-card .paragraph-card{
         display: none;
     }
+
+    
 
 }

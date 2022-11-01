@@ -2,7 +2,7 @@ import React from 'react';
 import './cardNews.css';
 import {AiOutlineClockCircle} from 'react-icons/ai';
 import  imgDefault from '../../assets/img/img_error_loading.svg';
-import { sliceString } from '../../helpers/funString';
+import { sliceString } from '../../helpers/functionString';
 import { Link } from 'react-router-dom';
 
 

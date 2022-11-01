@@ -1,6 +1,6 @@
 import React from 'react';
 import Loader from '../loader/Loader';
-import { Message } from '../message/Message';
+import { MessageLoad } from '../message/MessageLoad';
 import CardNews from '../card/CardNews';
 import { useEffect } from 'react';
 import { useContext } from 'react';
@@ -40,7 +40,7 @@ export default function FeaturedNews() {
            <aside className='container-featured-news'>
                         <h2 className='title-section'>Destacados</h2>
                         {loading && <Loader/>}
-                        { error!==null ? <Message info={'Por el momento no se pueden mostrar las noticias destacadas.'}/>
+                        { error!==null ? <MessageLoad info={'Por el momento no se pueden mostrar las noticias destacadas.'}/>
                         :
                             <div className='wrapper-card-featured-news'>
                             {featuredNews && featuredNews.map((data)=>(

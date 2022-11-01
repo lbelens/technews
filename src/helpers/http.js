@@ -6,8 +6,6 @@ https://newsapi.org/v2/top-headlines?category=technology&language=es&pageSize=3&
 
 */
 
-const ApyKey = 'ac36fa2e8bc7425d822f7ed292147515';
-
  export const custom= ()=>{
     
     const  customFetch =  (endpoint)=>{

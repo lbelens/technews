@@ -3,20 +3,17 @@ import { useState } from 'react';
 import {FiSearch} from 'react-icons/fi';
 import './inputSearch.css';
 
-export default function InputSearch({get}) {
+export default function InputSearch({getSearchValue}) {
     const [valueInput, setValueInput ] = useState(null);
 
     const onChange= (e)=>{
         setValueInput(e.target.value.toLowerCase())
-        get(e.target.value.toLowerCase())
-        console.log(e)
-
-
+        getSearchValue(e.target.value.toLowerCase())
     }
     const handleClick=(e)=>{
         e.preventDefault()
         if(valueInput!=null){
-            get(valueInput)
+            getSearchValue(valueInput)
         }
     }
 
