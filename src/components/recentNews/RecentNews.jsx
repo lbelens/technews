@@ -21,7 +21,7 @@ function RecentNews({valueFilter}) {
     const [recentNews, setRecentNews]= useState([]);
     const [error,setError] = useState(null);
     const [loading, setLoading] = useState(true);
-    const [filtrar, setFiltrar]=useState(valueFilter);
+    const [filter, setFilter]=useState(valueFilter);
 
     const getData = async ()=>{
         let response= await getArticles(url, CATEGORY);   
@@ -44,8 +44,8 @@ function RecentNews({valueFilter}) {
     })
     
     useEffect(()=>{
-        setFilter(valueSearch)
-    },[valueSearch])
+        setFilter(valueFilter)
+    },[valueFilter])
 
     useEffect(()=>{
         getData();

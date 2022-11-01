@@ -17,24 +17,17 @@ const getArticle= ()=>{
     let dataArticle = JSON.parse(localStorage.getItem(data.state.id))
     setArticle(dataArticle) 
     setLoading(false)
-    console.log(dataArticle)
 }
 
-  
-   useEffect(()=>{
-    console.log("useEffect data")
+useEffect(()=>{
     window.scrollTo(0, 0);
     getArticle();
-    console.log(localStorage.length)
-   },[data])
+},[data])
 
 
 return(
         <>
-          
-          
             {loading && <Loader/>}
-
             {
                 article &&
                     <div className='wrapper-details'>
@@ -53,7 +46,6 @@ return(
                         <FeaturedNews/> 
                     </div>
             }
-
         </>
     )
 }
