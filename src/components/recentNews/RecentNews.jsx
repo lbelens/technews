@@ -12,7 +12,7 @@ import { SearchResult } from '../searchResult/SearchResult';
 
 let date= formatDate('yyyy-mm-dd');
 
-function RecentNews({valueFilter}) {
+function RecentNews({valueSearch}) {
 
     const url = `https://newsapi.org/v2/everything?q=google OR microsoft OR github OR facebook&language=es&pageSize=13&from=${date.today}&apiKey=ac36fa2e8bc7425d822f7ed292147515`;
 
@@ -21,7 +21,9 @@ function RecentNews({valueFilter}) {
     const [recentNews, setRecentNews]= useState([]);
     const [error,setError] = useState(null);
     const [loading, setLoading] = useState(true);
-    const [filter, setFilter]=useState(valueFilter);
+    const [filter, setFilter]=useState(valueSearch);
+
+    console.log(valueSearch)
 
     const getData = async ()=>{
         let response= await getArticles(url, CATEGORY);   
@@ -44,8 +46,9 @@ function RecentNews({valueFilter}) {
     })
     
     useEffect(()=>{
-        setFilter(valueFilter)
-    },[valueFilter])
+        window.scrollTo(0, 0);
+        setFilter(valueSearch)
+    },[valueSearch])
 
     useEffect(()=>{
         getData();
@@ -61,7 +64,6 @@ function RecentNews({valueFilter}) {
                             <div className='wrapper-card-recent-news'>
                                 {filter !=null ?
                                      <SearchResult result={filteredData} category={CATEGORY}/>                                
-                            
                                     :
                                     recentNews && recentNews.map((data)=>(
                                             <CardNews key={data.key} id={data.key} image={data.urlToImage} title = {data.title} description={data.description} date = {data.publishedAt} category={CATEGORY}/>
