@@ -8,7 +8,7 @@ import {useState } from 'react';
 import ArticlesContext from '../../context/ArticlesContext';
 import './feauturedNews.css';
 
-// const url = "http://192.168.100.11:3005/destacados";
+// // const url = "http://192.168.100.11:3005/destacados";
 
 export default function FeaturedNews() {
     const url = 'https://newsapi.org/v2/top-headlines?category=science&language=es&pageSize=10&apiKey=ac36fa2e8bc7425d822f7ed292147515';
