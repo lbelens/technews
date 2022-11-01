@@ -24,9 +24,9 @@ export default function FeaturedNews() {
             setError(response)
             setLoading(false);
         }else{
-            setfeaturedNews(response)
+            // setfeaturedNews(response)
+            setfeaturedNews(response.articles)
             setLoading(false);
-            console.log(localStorage.length)
         }
     }
 
