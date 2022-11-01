@@ -7,7 +7,7 @@ import Loader from '../loader/Loader';
 import { MessageLoad } from '../message/MessageLoad';
 import CardNews from '../card/CardNews';
 import './recentNews.css';
-import { formatDate } from '../../helpers/funString';
+import { formatDate } from '../../helpers/functionString';
 import { SearchResult } from '../searchResult/SearchResult';
 
 let date= formatDate('yyyy-mm-dd');

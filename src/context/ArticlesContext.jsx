@@ -1,6 +1,6 @@
 import { useReducer } from "react";
 import { createContext } from "react";
-import { addKey } from "../helpers/funString";
+import { addKey } from "../helpers/functionString";
 import { custom } from '../helpers/http';
 
 const ArticlesContext = createContext(); //creo el contexto
