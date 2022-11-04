@@ -13,7 +13,7 @@ Es un sitio web que muestra noticias de tecnologías <b>recientes</b> de acuerdo
   <li>Css</li>
 </ul>
 
-<h2>Interfaz de la aplicación</h2>
+<h2>Interfaz del sitio</h2>
   La interfaz se hizo sencilla y que fuera adaptable a los diferentes tamaños de dispositivos.
 <h3>Vista en escritorio</h3>
   <div> 
