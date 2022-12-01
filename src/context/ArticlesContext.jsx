@@ -5,6 +5,7 @@ import { custom } from '../helpers/http';
 
 const ArticlesContext = createContext(); //creo el contexto
 
+//estado inicial
 const initialState={
     dataArticles: null,
     errorFeaturedNews: null,
